@@ -131,7 +131,8 @@ end
 return require('telescope').register_extension {
   setup = function(ext_config)
     filetypes = ext_config.filetypes or {"png", "jpg", "gif", "mp4", "webm", "pdf"}
-    find_cmd = ext_config.find_cmd or "fd"
+    -- TODO(BD): fix ext_config.find_cmd. Currently does using the settings find_cmd = "rg" does not overwrite the default "fd"
+    find_cmd = ext_config.find_cmd or "rg"
     image_stretch = ext_config.image_stretch or 250
   end,
   exports = {
